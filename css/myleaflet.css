@@ -1,0 +1,16 @@
+#mapid { 
+	height: 600px; 
+}
+p{
+	margin-left: 10px;
+}
+.leaflet-bar {
+  visibility: hidden;
+}
+.leaflet-container .leaflet-control-attribution {
+    font-size: 8px;
+}
+.name {
+    margin: 13px 19px;
+    line-height: 1.4;
+}
