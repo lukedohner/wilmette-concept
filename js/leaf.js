@@ -14,6 +14,10 @@ function init(){
     accessToken: 'sk.eyJ1IjoibHVrZWRvaG5lciIsImEiOiJjajRnMnFtNHQwMTQzMzJwaTE4b2pxbzlsIn0.FhKUrokvRUth-xBZUtMcrw'
  }).addTo(mymap);
 	var watersmeet = L.marker([42.0865, -87.77287]).addTo(mymap);
+
+
+
+
 	var circle = L.circle([42.08982, -87.81836], {
     color: 'green',
     fillColor: '#2BF145',
@@ -43,7 +47,21 @@ function init(){
     mymap.panInsideBounds(bounds, { animate: false });
     });
 ////////
-
+    var polyline = L.polyline([
+    [-41.286, 174.796],
+    [-41.281, 174.786],
+    [-41.279, 174.776],
+    [-41.290, 174.775],
+    [-41.292, 174.788]
+    ],
+     {
+    color: 'red',
+    weight: 10,
+    opacity: 0.7,
+    dashArray: '20,15',
+    lineJoin: 'round'
+            }
+    ).addTo(mymap);
     ////////
 var museumIcon = L.icon({
     iconUrl: "img/logo50.png",
@@ -80,7 +98,8 @@ function onEachFeature(feature, layer) {
         popupAnchor: [0,-15],
                 });
     // create popup contents
-    var bahaiPopup = "bahai temple<br/><img src='img/bahai.png' alt='bahai temple' width='700px'/>";
+    var bahaiPopup = "bahai temple<br/><img src='bahai_icon' alt='bahai temple' width='700px'/>";
+    //var bahaiPopup = "bahai temple<br/><img src='img/bahai.png' alt='bahai temple' width='700px'/>";
     // specify popup options 
     var bahaiOptions =
         {
@@ -93,7 +112,7 @@ function onEachFeature(feature, layer) {
 
 //////modle over lay//////////
 
-var popoverwin = L.marker([42.05771, -87.76274],{title:"Click to show window." }).addTo(mymap);
+    var popoverwin = L.marker([42.05771, -87.76274],{title:"Click to show window." }).addTo(mymap);
 
     popoverwin.on('click',function(){
     var win =  L.control.window(mymap,{title:'Hello world!',maxWidth:400,modal: true, position:'topLeft'})
@@ -127,6 +146,35 @@ L.geoJSON(geojsonFeature, {
 }).addTo(mymap);
 var myLayer = L.geoJSON().addTo(mymap);
 //myLayer.addData(geojsonFeature);
-/////////////end//////////
-//this is the end for now
+////External json file
+////External json file
+
+// var geojsonLayer = new L.GeoJSON.AJAX("/js/85940917.geojson");
+// geojsonLayer.addTo(mymap);
+
+var district_boundary = new L.geoJson();
+ $.ajax({
+dataType: "json",
+url: "/js/85940917.geojson",
+ success: function(data) {
+     $(data.features).each(function(key, data) {
+         district_boundary.addData(data);
+     });
+ }
+}).error(function() {
+     console.log("Error in json");
+});
+
+
+  // load GeoJSON from an external file
+  $.getJSON("/js/85940917.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJson(data).addTo(mymap);
+  });
 }
+// district_boundary.addTo(mymap);
+/////////////end//////////
+
+//this is the end for now
+
+
