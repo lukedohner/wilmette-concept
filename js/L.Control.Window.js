@@ -207,9 +207,9 @@ L.Control.Window = L.Control.extend({
         
         this.setActionCallback(promptObject.action);
 
-        var cancel = this.options.prompt.buttonCancel || 'CANCEL';
+        var cancel = this.options.prompt.buttonCancel || 'Close';
 
-        var ok = this.options.prompt.buttonOK || 'OK';
+        var ok = this.options.prompt.buttonOK || '';
 
         var action = this.options.prompt.buttonAction || undefined;
 

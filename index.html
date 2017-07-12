@@ -5,17 +5,16 @@
         <meta http-equiv="x-ua-compatible" content="ie=edge">
         <title>Wilmette</title>
         <meta name="description" content="">
-        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
         <link rel='shortcut icon' type='image/x-icon' href='favicon.ico' />
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <link rel="stylesheet" href="css/normalize.css">
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/L.Control.Window.css" />
-         <!-- http://leafletjs.com/examples/quick-start/ -->
          <!-- Leaflet is a JS lib for interactive maps -->
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.1.0/dist/leaflet.css"
-   integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
-   crossorigin=""/>
+           integrity="sha512-wcw6ts8Anuw10Mzh9Ytw4pylW8+NAD4ch3lqm9lzAsTxg0GFeJgoAtxuCLREZSC5lUXdVyo/7yfsqFjQ4S+aKw=="
+           crossorigin=""/>
         <link rel="stylesheet" href="css/myleaflet.css">
         <script src="js/vendor/modernizr-2.8.3.min.js"></script>
 
@@ -24,26 +23,29 @@
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
-
         <!-- Add your site or application content here -->
-        <p>Hello! Wilmette Illinois! Check out your town.</p>
-        <div ng-app="">
-        <p>Enter a city in the box:</p>
-<p>City: <input type="text" ng-model="name"></p>
-<p ng-bind="name"></p>
+        
+        <!-- <div ng-app="">
+        <p>Enter a city in the box: {all this does is add the text below :) }</p>
+        <p>City: <input type="text" ng-model="name"></p>
+        <p ng-bind="name"></p>
+        </div> -->
+        <h1>Wilmette Illinois, See your historic places.</h1>
+        <div id="mapid">
         </div>
-        <div id="mapid"></div>
-        <script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>
-        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>
+
+        <!--<script src="https://code.jquery.com/jquery-1.12.0.min.js"></script>-->
+        <!--<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.12.0.min.js"><\/script>')</script>-->
+        <script src="js/vendor/jquery-1.12.0.min.js"></script>
         <script src="js/plugins.js"></script>
         <script src="js/main.js"></script>
         <script src="js/leaf.js"></script>
-        
-   
-        <script src="js/leaflet.js"></script>    
-        <!--<script src="js/leaflet.ajax.min.js"></script>-->
-        
-        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+        <!--<script src="js/leaflet.js"></script>-->  
+        <script src="https://unpkg.com/leaflet@1.1.0/dist/leaflet.js"
+        integrity="sha512-mNqn2Wg7tSToJhvHcqfzLMU6J4mkOImSPTxVZAdo+lcPlk+GhZmYgACEe0x35K7YzW1zJ7XyJV/TT1MrdXvMcA=="
+        crossorigin=""></script>  
+        <!--<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>-->
+        <!--This is for pop over window-->
         <script src="js/L.Control.Window.js"></script>
         <!--<script src="/js/leaflet.ajax.min.js"></script> -->
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

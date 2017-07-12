@@ -1,50 +1,56 @@
 window.onload = function() {
 init();
 };
-//window.on("load", function() {
 function init(){
-	var mymap = L.map('mapid').setView([42.08255, -87.76222], 13);
+	var map = L.map('mapid').setView([42.0788, -87.73021], 14);
 	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
     attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
-    zoomControl:false,
-    maxZoom: 13,
+    zoomControl:true,
+    maxZoom: 18,
     minZoom: 13,
     id: 'mapbox.streets',
     //id: 'mapbox.light'
     accessToken: 'sk.eyJ1IjoibHVrZWRvaG5lciIsImEiOiJjajRnMnFtNHQwMTQzMzJwaTE4b2pxbzlsIn0.FhKUrokvRUth-xBZUtMcrw'
- }).addTo(mymap);
-	var watersmeet = L.marker([42.0865, -87.77287]).addTo(mymap);
+ }).addTo(map);
 
-
-
-
-	var circle = L.circle([42.08982, -87.81836], {
+    var wilmetteBoarder = $.getJSON("js/85940917.geojson",function(data){
+    // add GeoJSON layer to the map once the file is loaded
+    L.geoJSON(data, {
+    style: function (feature) {
+        return {color: "#A1A1A1", fillColor: '#2BF145',fillOpacity: 0.2,};
+    }
+    }).addTo(map);
+    });
+    var myWilmetteBoarder = L.layerGroup([wilmetteBoarder]);
+ 
+setTimeout(function(){
+    //Using setTime to put on a higher layer in Interactive Lealet layer
+    var latlngs = [
+    [42.07797, -87.74188],
+    [42.07758, -87.73733],
+    [42.07567, -87.7375],
+    [42.07535, -87.73493],
+    [42.07402, -87.7351],
+    [42.07414, -87.73991],
+    [42.07797, -87.74188],];
+    var communitypark = L.polygon(latlngs, {
     color: 'green',
     fillColor: '#2BF145',
-    fillOpacity: 0.3,
-    radius: 500
-}).addTo(mymap);
-	var indianhill = L.polygon([
-    [42.09427, -87.73922],
-    [42.09473, -87.7248],
-    [42.08892, -87.72549],
-    [42.08695, -87.73295],
-    [42.08867, -87.74094]
-    
-]).addTo(mymap);
-
-	watersmeet.bindPopup("<b>Hello world!</b><br>I am a popup.");
-	circle.bindPopup("Pretty Gallery Park.");
-	indianhill.bindPopup("Come to Indian Hill Golf Course");
-    mymap.zoomControl.disable();
-    // mymap.dragging.disable();
-    var southWest = L.latLng(42.07567, -87.89783),
-    northEast = L.latLng(42.07567, -87.65905);
+    fillOpacity: 0.3
+    }
+        ).addTo(map);
+    communitypark.bindPopup("Come to Community Park <br>(Example of a polygon, neet-o!)");
+    //console.log("communpark");
+    //
+}, 1000);
+	//map.zoomControl.disable();
+    // map.dragging.disable();
+    var southWest = L.latLng(42.06255, -87.78179),
+    northEast = L.latLng(42.09198, -87.67399);
     var bounds = L.latLngBounds(southWest, northEast);
-
-    mymap.setMaxBounds(bounds);
-    mymap.on('drag', function() {
-    mymap.panInsideBounds(bounds, { animate: false });
+    map.setMaxBounds(bounds);
+    map.on('drag', function() {
+    map.panInsideBounds(bounds, { animate: false });
     });
 ////////
     var polyline = L.polyline([
@@ -61,29 +67,163 @@ function init(){
     dashArray: '20,15',
     lineJoin: 'round'
             }
-    ).addTo(mymap);
+    ).addTo(map);
     ////////
-var museumIcon = L.icon({
-    iconUrl: "img/logo50.png",
-    shadowUrl: "img/logo50_shadow.png",
+// var museumIcon = L.icon({
+    // iconUrl: "img/logo50.png",
+    // shadowUrl: "img/logo50_shadow.png",
+//     iconSize:     [60, 34], // size of the icon
+//     shadowSize:   [60, 34], // size of the shadow
+//     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
+//     shadowAnchor: [21, 93],  // the same for the shadow
+   
+//     popupAnchor:  [0, -90] // point from which the popup should open relative to the iconAnchor
+// });
+// var whsMarker = L.marker([42.0758849,-87.7250815], {icon: museumIcon}).addTo(map);
+// whsMarker.bindPopup("Wilmette Historical Museum");
+
+//modal creation
+    // create bahaiIcon icon
+    var whmIcon = L.icon({
+    iconUrl: "img/whmIcon.png",
+    shadowUrl: "img/whmIcon_shadow.png",
     iconSize:     [60, 34], // size of the icon
     shadowSize:   [60, 34], // size of the shadow
     iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
     shadowAnchor: [21, 93],  // the same for the shadow
-   
-    popupAnchor:  [0, -90] // point from which the popup should open relative to the iconAnchor
-});
-var logo50 = L.marker([42.0758849, -87.7250815], {icon: museumIcon}).addTo(mymap);
-logo50.bindPopup("Wilmette Historical Museum");
+        popupAnchor: [0,-15],
+        });
+    // create marker object, pass custom icon as option, pass content and options to popup, add to map
+    var popoverwin = L.marker([42.0758849,-87.7250815],{icon: whmIcon,title:"Click to Wilmette Historical Museum." }).addTo(map);
+    //////modal over lay//////////
+    popoverwin.on('click',function(){
+    var win =  L.control.window(map,{title:'Wilmette Historical Museum',maxWidth:600,modal: true, position:'topLeft'})
+    .content("The Wilmette Historical Museum was established by the Village of Wilmette in 1951. <img src='img/whm.jpg' alt='whm' width='500px'/><br><a href='museum@wilmette.com' target='_blank'>Wilmette Historical Museum</a> 609 Ridge Road, Wilmette, IL 60091" )
+    .prompt({callback:function(){console.log('This is called after OK click!');}
+    })
+    .show();
+    });
+//end modal creation
+
+
+//modal creation
+    // create bahaiIcon icon
+    var bahaiIcon = L.icon({
+        iconUrl: 'img/bahai_icon.png',
+        iconSize: [40, 40],
+        shadowUrl: "img/circleIcon_shadow.png",
+        shadowSize:   [40, 40], // size of the shadow
+        iconAnchor:   [2, 4], // point of the icon which will correspond to marker's location
+        shadowAnchor: [0, 0],  // the same for the shadow
+        popupAnchor: [0,-15],
+        });
+    // create marker object, pass custom icon as option, pass content and options to popup, add to map
+    var bahaiWin = L.marker([42.074439,-87.6864557],{icon: bahaiIcon,title:"Click to show window." }).addTo(map);
+    //////modal over lay//////////
+    bahaiWin.on('click',function(){
+    var win =  L.control.window(map,{title:'Baháí House of Worship',maxWidth:600,modal: true, position:'topLeft'})
+    .content("The cornerstone for the Bahá'í House of Worship in Wilmette, Illinois. National Register of Historic Places.<img src='img/bahai.png' alt='bahai temple' width='500px'/><br> <a href='bahaitemple.org' target='_blank'>Bahai USA</a> 100 Linden Ave, Wilmette, IL 60091" )
+    .prompt({callback:function(){console.log('This is called after OK click!');}
+    })
+    .show();
+    });
+//end modal creation
+//historicHome
+//modal creation
+    // create bahaiIcon icon
+    var historicHomeIcon = L.icon({
+        iconUrl: 'img/historicHome_icon.png',
+        iconSize: [40, 40],
+        shadowUrl: "img/circleIcon_shadow.png",
+        shadowSize:   [40, 40], // size of the shadow
+        iconAnchor:   [2, 4], // point of the icon which will correspond to marker's location
+        shadowAnchor: [0, 0],  // the same for the shadow
+        popupAnchor: [0,-15],
+        });
+    // create marker object, pass custom icon as option, pass content and options to popup, add to map
+    var historicHomeWin = L.marker([42.08265, -87.70268],{icon: historicHomeIcon,title:"Click to show window." }).addTo(map);
+    //////modal over lay//////////
+    historicHomeWin.on('click',function(){
+    var win =  L.control.window(map,{title:'Asahel Gage House',maxWidth:600,modal: true, position:'topLeft'})
+    .content("Stroll around part of east Wilmette to see some of the remaining examples of 1870s homes.<br><img src='img/historicHome.jpg' alt='bahai temple' width='400px'/><br><a href='http://www.wilmettehistory.org/' target='_blank'>Wilmette History Museum</a> 609 Ridge Road, Wilmette, IL 60091" )
+    .prompt({callback:function(){console.log('This is called after OK click!');}
+    })
+    .show();
+    });
+//end modal creation
+
+//modal creation
+    // create westmoreland Country Club icon
+    var westmoreIcon = L.icon({
+        iconUrl: 'img/westmore_icon.png',
+        iconSize: [40, 40],
+        shadowUrl: "img/circleIcon_shadow.png",
+        shadowSize:   [40, 40], // size of the shadow
+        iconAnchor:   [2, 4], // point of the icon which will correspond to marker's location
+        shadowAnchor: [0, 0],  // the same for the shadow
+        popupAnchor: [0,-15],
+        });
+    // create marker object, pass custom icon as option, pass content and options to popup, add to map
+    var westmoreWin = L.marker([42.06777, -87.73639],{icon: westmoreIcon,title:"Click to show window." }).addTo(map);
+    //////modal over lay//////////
+    westmoreWin.on('click',function(){
+    var win =  L.control.window(map,{title:'Westmoreland Country Club',maxWidth:600,modal: true, buttonOK: 'test',position:'topLeft'})
+    .content("Lorem ipsum dolor sit amet,consectetur adipiscing elit. Consectetur adipiscing elit.<img src='img/westmore.jpg' alt='westmore country club' width='500px'/><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href='http://www.westmorelandcc.org//' target='_blank'>Westmoreland CC</a> 2601 Old Glenview Road Wilmette, Illinois 60091" )
+    .prompt({callback:function(){console.log('This is called after OK click!');}
+    })
+    .show();
+    });
+//end modal creation
+//modal creation
+    // Waters Meet Woods icon
+    var watersmeetIcon = L.icon({
+        iconUrl: 'img/myMarker_icon.png',
+        iconSize: [25, 41],
+        popupAnchor: [0,-15],
+        });
+    // create marker object, pass custom icon as option, pass content and options to popup, add to map
+    var watersmeetWin = L.marker([42.08472, -87.76926],{icon: watersmeetIcon,title:"Click to show window." }).addTo(map);
+    //////modal over lay//////////
+    watersmeetWin.on('click',function(){
+    var win =  L.control.window(map,{title:'Watersmeet Woods',maxWidth:600,modal: true, position:'topLeft'})
+    .content("Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<img src='img/watersmeet.jpg' alt='westmore country club' width='500px'/><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href='http://www.wilmettehistory.org/' target='_blank'>wilmettehistory</a> West Wilmette" )
+    .prompt({callback:function(){console.log('This is called after OK click!');}
+    })
+    .show();
+    });
+//end modal creation
+
+
+
+// var geojsonFeature = {
+//     "type": "Feature",
+//     "properties": {
+//          "iconUrl": "img/historicHome_icon.png",
+//         "name": "Coors Field",
+//         "amenity": "Baseball Stadium",
+//         "popupContent": "Green Bay Road!"
+//     },
+//     "geometry": {
+//         "type": "Point",
+//         "coordinates": [42.07459, -87.70738]
+
+//     }
+// };
+// L.geoJSON(geojsonFeature, {
+//     onEachFeature: onEachFeature
+// }).addTo(map);
+// var myLayer = L.geoJSON().addTo(map);
 
 var popup = L.popup();
 function onMapClick(e) {
     popup
     .setLatLng(e.latlng)
     .setContent("Map " + e.latlng.toString())
-    .openOn(mymap);
+    .openOn(map);
     }
-    mymap.on('click', onMapClick);
+    map.on('click', onMapClick);
+
+
 function onEachFeature(feature, layer) {
     // does this feature have a property named popupContent?
     if (feature.properties && feature.properties.popupContent) {
@@ -91,90 +231,18 @@ function onEachFeature(feature, layer) {
     }
 }
 
- // create custom icon
-    var bahaiIcon = L.icon({
-        iconUrl: 'img/bahai_icon.png',
-        iconSize: [40, 40],
-        popupAnchor: [0,-15],
-                });
-    // create popup contents
-    var bahaiPopup = "bahai temple<br/><img src='bahai_icon' alt='bahai temple' width='700px'/>";
-    //var bahaiPopup = "bahai temple<br/><img src='img/bahai.png' alt='bahai temple' width='700px'/>";
-    // specify popup options 
-    var bahaiOptions =
-        {
-        'maxWidth': '750',
-        'className' : 'custom',
-        'offset' : 'Point(7, 7)'
-        };
-    // create marker object, pass custom icon as option, pass content and options to popup, add to map
-    L.marker([42.08816, -87.703], {icon: bahaiIcon, title:"Click to show window."}).bindPopup(bahaiPopup,bahaiOptions).addTo(mymap);
 
-//////modle over lay//////////
+setTimeout(function(){
+    //
+    var circle = L.circle([42.07956, -87.7587], {
+    color: 'green',
+    fillColor: '#2BF145',
+    fillOpacity: 0.3,
+    radius: 100,
+    "z-Index":"300"
+    }).addTo(map);
+    circle.bindPopup("I94 and Lake Av.<br> (Example of a circle vector)");
+    //
+}, 1500);
 
-    var popoverwin = L.marker([42.05771, -87.76274],{title:"Click to show window." }).addTo(mymap);
-
-    popoverwin.on('click',function(){
-    var win =  L.control.window(mymap,{title:'Hello world!',maxWidth:400,modal: true, position:'topLeft'})
-    .content("Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris .  molestie.<img src='img/bahai.png' alt='bahai temple' width='380px'/>")
-    .prompt({callback:function(){console.log('This is called after OK click!');}
-    })
-    .show();
-    });
-
-// var winMtds = L.control.window(mymap)
-//         .title('Heading!')
-//         .content('First paragraph.')
-//         .show();
-/////
-// geoJson example////////
-var geojsonFeature = {
-    "type": "Feature",
-    "properties": {
-        "name": "Coors Field",
-        "amenity": "Baseball Stadium",
-        "popupContent": "This is where the Rockies play!"
-    },
-    "geometry": {
-        "type": "Point",
-        "coordinates": [-87.72978, 42.06816]
-
-    }
-};
-L.geoJSON(geojsonFeature, {
-    onEachFeature: onEachFeature
-}).addTo(mymap);
-var myLayer = L.geoJSON().addTo(mymap);
-//myLayer.addData(geojsonFeature);
-////External json file
-////External json file
-
-// var geojsonLayer = new L.GeoJSON.AJAX("/js/85940917.geojson");
-// geojsonLayer.addTo(mymap);
-
-var district_boundary = new L.geoJson();
- $.ajax({
-dataType: "json",
-url: "/js/85940917.geojson",
- success: function(data) {
-     $(data.features).each(function(key, data) {
-         district_boundary.addData(data);
-     });
- }
-}).error(function() {
-     console.log("Error in json");
-});
-
-
-  // load GeoJSON from an external file
-  $.getJSON("/js/85940917.geojson",function(data){
-    // add GeoJSON layer to the map once the file is loaded
-    L.geoJson(data).addTo(mymap);
-  });
 }
-// district_boundary.addTo(mymap);
-/////////////end//////////
-
-//this is the end for now
-
-
