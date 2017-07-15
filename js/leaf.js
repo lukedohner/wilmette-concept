@@ -8,7 +8,9 @@ function init(){
     zoomControl:true,
     maxZoom: 18,
     minZoom: 13,
-    id: 'mapbox.streets',
+    id: 'mapbox.satellite',
+    optimize:true,
+    //id: 'mapbox.streets',
     //id: 'mapbox.light'
     accessToken: 'sk.eyJ1IjoibHVrZWRvaG5lciIsImEiOiJjajRnMnFtNHQwMTQzMzJwaTE4b2pxbzlsIn0.FhKUrokvRUth-xBZUtMcrw'
  }).addTo(map);
@@ -17,7 +19,13 @@ function init(){
     // add GeoJSON layer to the map once the file is loaded
     L.geoJSON(data, {
     style: function (feature) {
-        return {color: "#A1A1A1", fillColor: '#2BF145',fillOpacity: 0.2,};
+        return {
+            color: "#A1A1A1", 
+            fillColor: '#2BF145',
+            fillOpacity: 0.2,
+            weight: 2,
+            dashArray: '3',
+        };
     }
     }).addTo(map);
     });
@@ -89,16 +97,16 @@ setTimeout(function(){
     shadowUrl: "img/whmIcon_shadow.png",
     iconSize:     [60, 34], // size of the icon
     shadowSize:   [60, 34], // size of the shadow
-    iconAnchor:   [22, 94], // point of the icon which will correspond to marker's location
-    shadowAnchor: [21, 93],  // the same for the shadow
+    iconAnchor:   [1, 1], // point of the icon which will correspond to marker's location
+    shadowAnchor: [0, 0],  // the same for the shadow
         popupAnchor: [0,-15],
         });
     // create marker object, pass custom icon as option, pass content and options to popup, add to map
-    var popoverwin = L.marker([42.0758849,-87.7250815],{icon: whmIcon,title:"Click to Wilmette Historical Museum." }).addTo(map);
+    var popoverwin = L.marker([42.07535, -87.72259],{icon: whmIcon,title:"Click to Wilmette Historical Museum." }).addTo(map);
     //////modal over lay//////////
     popoverwin.on('click',function(){
-    var win =  L.control.window(map,{title:'Wilmette Historical Museum',maxWidth:600,modal: true, position:'topLeft'})
-    .content("The Wilmette Historical Museum was established by the Village of Wilmette in 1951. <img src='img/whm.jpg' alt='whm' width='500px'/><br><a href='museum@wilmette.com' target='_blank'>Wilmette Historical Museum</a> 609 Ridge Road, Wilmette, IL 60091" )
+    var win =  L.control.window(map,{title:'Wilmette Historical Museum',width:"100%", maxWidth:"400px",modal: true, position:'topLeft'})
+    .content("The Wilmette Historical Museum was established by the Village of Wilmette in 1951. <img src='img/whm.jpg' alt='whm' width='100%'/><br><a href='http://www.wilmettehistory.org/' target='_blank'>Wilmette Historical Museum</a> 609 Ridge Road, Wilmette, IL 60091" )
     .prompt({callback:function(){console.log('This is called after OK click!');}
     })
     .show();
@@ -121,8 +129,8 @@ setTimeout(function(){
     var bahaiWin = L.marker([42.074439,-87.6864557],{icon: bahaiIcon,title:"Click to show window." }).addTo(map);
     //////modal over lay//////////
     bahaiWin.on('click',function(){
-    var win =  L.control.window(map,{title:'Baháí House of Worship',maxWidth:600,modal: true, position:'topLeft'})
-    .content("The cornerstone for the Bahá'í House of Worship in Wilmette, Illinois. National Register of Historic Places.<img src='img/bahai.png' alt='bahai temple' width='500px'/><br> <a href='bahaitemple.org' target='_blank'>Bahai USA</a> 100 Linden Ave, Wilmette, IL 60091" )
+    var win =  L.control.window(map,{title:'Baháí House of Worship', width:"100%", maxWidth:"400px", modal: true, position:'topLeft'})
+    .content("The cornerstone for the Bahá'í House of Worship in Wilmette, Illinois. National Register of Historic Places.<img src='img/bahai.png' alt='bahai temple' width='100%'/><br> <a href='bahaitemple.org' target='_blank'>Bahai USA</a> 100 Linden Ave, Wilmette, IL 60091" )
     .prompt({callback:function(){console.log('This is called after OK click!');}
     })
     .show();
@@ -144,8 +152,8 @@ setTimeout(function(){
     var historicHomeWin = L.marker([42.08265, -87.70268],{icon: historicHomeIcon,title:"Click to show window." }).addTo(map);
     //////modal over lay//////////
     historicHomeWin.on('click',function(){
-    var win =  L.control.window(map,{title:'Asahel Gage House',maxWidth:600,modal: true, position:'topLeft'})
-    .content("Stroll around part of east Wilmette to see some of the remaining examples of 1870s homes.<br><img src='img/historicHome.jpg' alt='bahai temple' width='400px'/><br><a href='http://www.wilmettehistory.org/' target='_blank'>Wilmette History Museum</a> 609 Ridge Road, Wilmette, IL 60091" )
+    var win =  L.control.window(map,{title:'Asahel Gage House',width:"100%", modal: true, position:'topLeft'})
+    .content("Stroll around part of east Wilmette to see some of the remaining examples of 1870s homes.<br><img src='img/historicHome.jpg' alt='bahai temple' width='100%'/><br><a href='http://www.wilmettehistory.org/' target='_blank'>Wilmette History Museum</a> 609 Ridge Road, Wilmette, IL 60091" )
     .prompt({callback:function(){console.log('This is called after OK click!');}
     })
     .show();
@@ -167,8 +175,8 @@ setTimeout(function(){
     var westmoreWin = L.marker([42.06777, -87.73639],{icon: westmoreIcon,title:"Click to show window." }).addTo(map);
     //////modal over lay//////////
     westmoreWin.on('click',function(){
-    var win =  L.control.window(map,{title:'Westmoreland Country Club',maxWidth:600,modal: true, buttonOK: 'test',position:'topLeft'})
-    .content("Lorem ipsum dolor sit amet,consectetur adipiscing elit. Consectetur adipiscing elit.<img src='img/westmore.jpg' alt='westmore country club' width='500px'/><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href='http://www.westmorelandcc.org//' target='_blank'>Westmoreland CC</a> 2601 Old Glenview Road Wilmette, Illinois 60091" )
+    var win =  L.control.window(map,{title:'Westmoreland Country Club',width:"100%", maxWidth:"400px",modal: true, buttonOK: 'test',position:'topLeft'})
+    .content("Llorem ipsum dolor sit amet,consectetur adipiscing elit. Consectetur adipiscing elit.<img src='img/westmore.jpg' alt='westmore country club' width='100%'/><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href='http://www.westmorelandcc.org//' target='_blank'>Westmoreland CC</a> 2601 Old Glenview Road Wilmette, Illinois 60091" )
     .prompt({callback:function(){console.log('This is called after OK click!');}
     })
     .show();
@@ -185,8 +193,8 @@ setTimeout(function(){
     var watersmeetWin = L.marker([42.08472, -87.76926],{icon: watersmeetIcon,title:"Click to show window." }).addTo(map);
     //////modal over lay//////////
     watersmeetWin.on('click',function(){
-    var win =  L.control.window(map,{title:'Watersmeet Woods',maxWidth:600,modal: true, position:'topLeft'})
-    .content("Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<img src='img/watersmeet.jpg' alt='westmore country club' width='500px'/><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href='http://www.wilmettehistory.org/' target='_blank'>wilmettehistory</a> West Wilmette" )
+    var win =  L.control.window(map,{title:'Watersmeet Woods',width:"100%", maxWidth:"400px",modal: true, position:'topLeft'})
+    .content("Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<img src='img/watersmeet.jpg' alt='westmore country club' width='100%'/><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href='http://www.wilmettehistory.org/' target='_blank'>wilmettehistory</a> West Wilmette" )
     .prompt({callback:function(){console.log('This is called after OK click!');}
     })
     .show();

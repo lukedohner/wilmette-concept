@@ -25,7 +25,7 @@ L.Control.Window = L.Control.extend({
         var modality = 'nonmodal';
 
         if (this.options.modal){
-            modality = 'modal'
+            modality = 'modal';
         }
 
         // Create popup window container
