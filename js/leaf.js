@@ -2,20 +2,85 @@ window.onload = function() {
 init();
 };
 function init(){
-	var map = L.map('mapid').setView([42.0788, -87.73021], 14);
-	L.tileLayer('https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}', {
-    attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>',
+    var mapboxAccessToken = 'sk.eyJ1IjoibHVrZWRvaG5lciIsImEiOiJjajRnMnFtNHQwMTQzMzJwaTE4b2pxbzlsIn0.FhKUrokvRUth-xBZUtMcrw';
+    var mapboxUrl ="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}";
+    var mapboxAttribution = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>';
+	
+    var map = L.map('mapid').setView([42.0788, -87.73021], 14);
+	L.tileLayer(mapboxUrl, {
+    attribution: mapboxAttribution,
     zoomControl:true,
     maxZoom: 18,
     minZoom: 13,
-    id: 'mapbox.satellite',
+    //id: 'mapbox.satellite', 
+    id: 'mapbox.streets',
     optimize:true,
-    //id: 'mapbox.streets',
     //id: 'mapbox.light'
-    accessToken: 'sk.eyJ1IjoibHVrZWRvaG5lciIsImEiOiJjajRnMnFtNHQwMTQzMzJwaTE4b2pxbzlsIn0.FhKUrokvRUth-xBZUtMcrw'
+    accessToken: mapboxAccessToken,
+    //accessToken: 'sk.eyJ1IjoibHVrZWRvaG5lciIsImEiOiJjajRnMnFtNHQwMTQzMzJwaTE4b2pxbzlsIn0.FhKUrokvRUth-xBZUtMcrw',
  }).addTo(map);
+    var grayscale = L.tileLayer(mapboxUrl, {id: 'mapid', accessToken: 'sk.eyJ1IjoibHVrZWRvaG5lciIsImEiOiJjajRnMnFtNHQwMTQzMzJwaTE4b2pxbzlsIn0.FhKUrokvRUth-xBZUtMcrw', attribution: mapboxAttribution});
+    var streets   = L.tileLayer(mapboxUrl, {id: 'mapid', accessToken: 'sk.eyJ1IjoibHVrZWRvaG5lciIsImEiOiJjajRnMnFtNHQwMTQzMzJwaTE4b2pxbzlsIn0.FhKUrokvRUth-xBZUtMcrw', attribution: mapboxAttribution});
+var streetsIcon = L.icon({
+        iconUrl: 'img/myStreets_icon.png',
+        iconSize: [25, 41],
+        popupAnchor: [0,-15],
+        });
+var grToRedIcon = L.icon({
+        iconUrl: 'img/myGrToRed_icon.gif',
+        iconSize: [25, 41],
+        popupAnchor: [0,-15],
+        });
 
-    var wilmetteBoarder = $.getJSON("js/85940917.geojson",function(data){
+
+//streets layer group
+var lakeav = L.marker([42.07916, -87.7109],{icon: grToRedIcon,title:"Click to show window." }).bindPopup('This is Lake Av, Wilmette, IL.'),
+    centralav = L.marker([42.07674, -87.69785],{icon: streetsIcon,title:"Click to show window." }).bindPopup('This is Central Av, Wilmette, IL.');
+    illinoisrd = L.marker([42.07388, -87.73033],{icon: streetsIcon,title:"Click to show window." }).bindPopup('This is Illinois Rd, Wilmette, IL.');
+//example marker on click
+illinoisrd.on('click', illinoisrdClick);
+function illinoisrdClick(e) {
+    console.log("illinoisrdClick");
+}
+
+
+
+
+var streetsLayerGroup = L.layerGroup([lakeav, centralav, illinoisrd]);
+
+var parksIcon = L.icon({
+        iconUrl: 'img/myParks_icon.png',
+        iconSize: [25, 41],
+        popupAnchor: [0,-15],
+        });
+//park layer group
+var howardpark = L.marker([42.07747, -87.71997],{icon: grToRedIcon,title:"Click to show window." }).bindPopup('This is Howard Park, Wilmette, IL.'),
+    centennialpark = L.marker([42.07072, -87.73353],{icon: parksIcon,title:"Click to show window." }).bindPopup('This is Centennial Park, Wilmette, IL.');
+
+    earlywinepark = L.marker([42.07333, -87.7129],{icon: parksIcon,title:"Click to show window." }).bindPopup('This is Earlywine Park, Wilmette, IL.');
+    thornwoodpark = L.marker([42.08576, -87.73476],{icon: parksIcon,title:"Click to show window." }).bindPopup('This is Thornwood Park, Wilmette, IL.');
+var parksLayerGroup = L.layerGroup([howardpark, centennialpark, earlywinepark, thornwoodpark]);
+
+var hideLayerGroups = L.layerGroup([]);
+
+var overlayMaps = {
+    "Historic Streets and Homes": streetsLayerGroup,
+    "Geographic Park Features": parksLayerGroup,
+    "Hide Parks and Street Markers": hideLayerGroups
+};
+var baseMaps = {
+    "Grayscale": grayscale,
+    "Streets": streets
+};
+L.control.layers(overlayMaps).addTo(map);
+
+// var baseMaps = {
+//     "<span style='color: gray'>Grayscale</span>": grayscale,
+//     "Streets": streets
+// };
+
+//Border of Wilmette//
+    var wilmetteBoarder = $.getJSON("json/85940917.geojson",function(data){
     // add GeoJSON layer to the map once the file is loaded
     L.geoJSON(data, {
     style: function (feature) {
@@ -102,14 +167,17 @@ setTimeout(function(){
         popupAnchor: [0,-15],
         });
     // create marker object, pass custom icon as option, pass content and options to popup, add to map
-    var popoverwin = L.marker([42.07535, -87.72259],{icon: whmIcon,title:"Click to Wilmette Historical Museum." }).addTo(map);
+    var popoverwin = L.marker([42.07535, -87.72259],{icon: whmIcon, openOn:map, title:"Click to Wilmette Historical Museum." }).addTo(map);
     //////modal over lay//////////
     popoverwin.on('click',function(){
     var win =  L.control.window(map,{title:'Wilmette Historical Museum',width:"100%", maxWidth:"400px",modal: true, position:'topLeft'})
     .content("The Wilmette Historical Museum was established by the Village of Wilmette in 1951. <img src='img/whm.jpg' alt='whm' width='100%'/><br><a href='http://www.wilmettehistory.org/' target='_blank'>Wilmette Historical Museum</a> 609 Ridge Road, Wilmette, IL 60091" )
+    
     .prompt({callback:function(){console.log('This is called after OK click!');}
+        
     })
     .show();
+    
     });
 //end modal creation
 
@@ -129,8 +197,8 @@ setTimeout(function(){
     var bahaiWin = L.marker([42.074439,-87.6864557],{icon: bahaiIcon,title:"Click to show window." }).addTo(map);
     //////modal over lay//////////
     bahaiWin.on('click',function(){
-    var win =  L.control.window(map,{title:'Baháí House of Worship', width:"100%", maxWidth:"400px", modal: true, position:'topLeft'})
-    .content("The cornerstone for the Bahá'í House of Worship in Wilmette, Illinois. National Register of Historic Places.<img src='img/bahai.png' alt='bahai temple' width='100%'/><br> <a href='bahaitemple.org' target='_blank'>Bahai USA</a> 100 Linden Ave, Wilmette, IL 60091" )
+    var win =  L.control.window(map,{title:'Baháí House of Worship', width:'100%', maxWidth:'400px', modal: true, position:'topLeft'})
+    .content("The cornerstone for the Bahá'í House of Worship in Wilmette, Illinois. National Register of Historic Places.<img src='img/bahai.png' alt='bahai temple', width:'100%',/><br> <a href='bahaitemple.org' target='_blank'>Bahai USA</a> 100 Linden Ave, Wilmette, IL 60091" )
     .prompt({callback:function(){console.log('This is called after OK click!');}
     })
     .show();

@@ -44,6 +44,7 @@
     font: 14px/1.5 "Helvetica Neue", Arial, Helvetica, sans-serif;
     border: 2px solid #D8D2A4;
     border-radius: 5px;
+    max-width: 716px;
 }
 .titlebar h2{
     max-width: 250px;
