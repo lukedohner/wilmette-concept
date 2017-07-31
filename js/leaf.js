@@ -32,7 +32,6 @@ var grToRedIcon = L.icon({
         popupAnchor: [0,-15],
         });
 
-
 //streets layer group
 var lakeav = L.marker([42.07916, -87.7109],{icon: grToRedIcon,title:"Click to show window." }).bindPopup('This is Lake Av, Wilmette, IL.'),
     centralav = L.marker([42.07674, -87.69785],{icon: streetsIcon,title:"Click to show window." }).bindPopup('This is Central Av, Wilmette, IL.');
@@ -42,9 +41,6 @@ illinoisrd.on('click', illinoisrdClick);
 function illinoisrdClick(e) {
     console.log("illinoisrdClick");
 }
-
-
-
 
 var streetsLayerGroup = L.layerGroup([lakeav, centralav, illinoisrd]);
 
@@ -56,7 +52,6 @@ var parksIcon = L.icon({
 //park layer group
 var howardpark = L.marker([42.07747, -87.71997],{icon: grToRedIcon,title:"Click to show window." }).bindPopup('This is Howard Park, Wilmette, IL.'),
     centennialpark = L.marker([42.07072, -87.73353],{icon: parksIcon,title:"Click to show window." }).bindPopup('This is Centennial Park, Wilmette, IL.');
-
     earlywinepark = L.marker([42.07333, -87.7129],{icon: parksIcon,title:"Click to show window." }).bindPopup('This is Earlywine Park, Wilmette, IL.');
     thornwoodpark = L.marker([42.08576, -87.73476],{icon: parksIcon,title:"Click to show window." }).bindPopup('This is Thornwood Park, Wilmette, IL.');
 var parksLayerGroup = L.layerGroup([howardpark, centennialpark, earlywinepark, thornwoodpark]);
@@ -73,7 +68,16 @@ var baseMaps = {
     "Streets": streets
 };
 L.control.layers(overlayMaps).addTo(map);
-
+//ref http://leafletjs.com/reference.html#control-layers
+map.on('baselayerchange', function(e) {
+  console.log(e);
+  var myE = e.name +"  "+e.type;
+  console.log(myE + "Another log baselayerchange");
+  startAnimation();
+});
+// map.on('overlayadd', function(e) {
+//   console.log(e);
+// });
 // var baseMaps = {
 //     "<span style='color: gray'>Grayscale</span>": grayscale,
 //     "Streets": streets
@@ -85,7 +89,7 @@ L.control.layers(overlayMaps).addTo(map);
     L.geoJSON(data, {
     style: function (feature) {
         return {
-            color: "#A1A1A1", 
+            color: "#A1A1A1",
             fillColor: '#2BF145',
             fillOpacity: 0.2,
             weight: 2,
@@ -111,11 +115,11 @@ setTimeout(function(){
     fillColor: '#2BF145',
     fillOpacity: 0.3
     }
-        ).addTo(map);
+    ).addTo(map);
     communitypark.bindPopup("Come to Community Park <br>(Example of a polygon, neet-o!)");
     //console.log("communpark");
     //
-}, 1000);
+    }, 1000);
 	//map.zoomControl.disable();
     // map.dragging.disable();
     var southWest = L.latLng(42.06255, -87.78179),
