@@ -1,0 +1,750 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"random",
+				"randomColor"
+			],
+			[
+				"s",
+				"style"
+			],
+			[
+				"tra",
+				"transform"
+			],
+			[
+				"tr",
+				"translate"
+			],
+			[
+				"valu",
+				"valueline2"
+			],
+			[
+				"anima",
+				"animation"
+			],
+			[
+				"fill",
+				"fillOpacity"
+			],
+			[
+				"l",
+				"log"
+			],
+			[
+				"co",
+				"console"
+			],
+			[
+				"ti",
+				"title"
+			],
+			[
+				"vi",
+				"visible"
+			],
+			[
+				"margin",
+				"margin-bottom"
+			],
+			[
+				"au",
+				"autoAlpha"
+			],
+			[
+				"bar",
+				"barClick"
+			],
+			[
+				"inn",
+				"innerbar3"
+			],
+			[
+				"in",
+				"innerbar2"
+			],
+			[
+				"inner",
+				"innerbar1"
+			],
+			[
+				"animati",
+				"onAnimationComplete"
+			],
+			[
+				"i",
+				"inline-block"
+			],
+			[
+				"di",
+				"display"
+			],
+			[
+				"font",
+				"font-weight"
+			],
+			[
+				"padding",
+				"padding-bottom"
+			],
+			[
+				"paddin",
+				"padding-top"
+			],
+			[
+				"ex",
+				"example_video_1"
+			],
+			[
+				"bacl",
+				"background-color"
+			],
+			[
+				"bt",
+				"btn-podcast-caption"
+			],
+			[
+				"Compon",
+				"AppComponemt"
+			],
+			[
+				"Hero",
+				"HeroService"
+			],
+			[
+				"here",
+				"heroes"
+			],
+			[
+				"loop",
+				"loopTotal"
+			],
+			[
+				"a",
+				"alpha"
+			],
+			[
+				"he",
+				"height"
+			],
+			[
+				"h",
+				"height"
+			],
+			[
+				"fo",
+				"font-size"
+			],
+			[
+				"ba",
+				"background-color"
+			],
+			[
+				"mar",
+				"margin-top"
+			],
+			[
+				"fun",
+				"function"
+			],
+			[
+				"frame",
+				"frame2"
+			],
+			[
+				"con",
+				"console"
+			],
+			[
+				"v",
+				"visible"
+			],
+			[
+				"t",
+				"text-align"
+			],
+			[
+				"fu",
+				"function"
+			],
+			[
+				"c",
+				"console"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 129.0,
+		"selected_items":
+		[
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"pac",
+				"Package Control: Install Package"
+			],
+			[
+				"In",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"pro",
+				"Preferences: Browse Packages"
+			],
+			[
+				"package",
+				"Preferences: Browse Packages"
+			],
+			[
+				"",
+				"Preferences: Browse Packages"
+			],
+			[
+				"Pack",
+				"Preferences: Browse Packages"
+			]
+		],
+		"width": 449.0
+	},
+	"console":
+	{
+		"height": 125.0
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/luke_projects_all/wilmette/dataworld/netflix.xlsx",
+		"/luke_projects_all/D3-graphjs/d3-t-and-t-v4-42622-extras/codesamples/419/earthquakes.csv",
+		"/luke_projects_all/D3-graphjs/d3-t-and-t-v4-42622-extras/codesamples/419/sales.csv",
+		"/luke_projects_all/D3-graphjs/d3-t-and-t-v4-42622-extras/codesamples/419/sankey-formatted-names.html",
+		"/luke_projects_all/D3-graphjs/d3-t-and-t-v4-42622-extras/codesamples/419/circle.html",
+		"/luke_projects_all/D3-graphjs/d3-t-and-t-v4-42622-extras/codesamples/419/data2.csv",
+		"/luke_projects_all/D3-graphjs/d3-t-and-t-v4-42622-extras/codesamples/419/data.csv",
+		"/luke_projects_all/D3-graphjs/d3-t-and-t-v4-42622-extras/codesamples/419/sankey.json",
+		"/luke_projects_all/wilmette/mymap/js/animate.js",
+		"/luke_projects_all/wilmette/mymap/css/myleaflet.css",
+		"/luke_projects_all/D3-graphjs/testing july 29, 2017 (Responses) - Form Responses 1.tsv",
+		"/luke_projects_all/D3-graphjs/simpleBarChart/index.html",
+		"/luke_projects_all/wilmette/mymap/js/leaf.js",
+		"/luke_projects_all/wilmette/mymap/index.html",
+		"/Users/luke/Desktop/untitled.css",
+		"/luke_projects_all/virginiabrown/vb-1.less",
+		"/luke_projects_all/wilmette/mymap/js/L.Control.Window.js",
+		"/luke_projects_all/wilmette/mymap/css/L.Control.Window.css",
+		"/luke_projects_all/wilmette/mymap/js/leaf2.js",
+		"/luke_projects_all/wilmette/mymap/index2.html",
+		"/luke_projects_all/wilmette/mymap/js/holderDelete",
+		"/luke_projects_all/wilmette/mymap/js/leaflet.ajax.min.js",
+		"/luke_projects_all/wilmette/mymap/json/85940917.geojson",
+		"/luke_projects_all/wilmette/mymap/humans.txt",
+		"/luke_projects_all/wilmette/mymap_html5_boilerplate_v5.3.0/index.html",
+		"/luke_projects_all/wilmette/mymap_html5_boilerplate_v5.3.0/css/myleaflet.css",
+		"/luke_projects_all/wilmette/mymap_html5_boilerplate_v5.3.0/js/main.js",
+		"/luke_projects_all/wilmette/mymap_html5_boilerplate_v5.3.0/js/leaf.js",
+		"/luke_projects_all/oliver/NCAA MARRIOTT_banners/1003211_ncaa_300x250_v1_unminified/js/banner.js",
+		"/luke_projects_all/oliver/NCAA MARRIOTT_banners/1003211_ncaa_300x250_v1_unminified/js/banner.animation.js",
+		"/luke_projects_all/oliver/ncaa-banner/1003211_ncaa_300x250_v1_unminified/index.html",
+		"/luke_projects_all/oliver/ncaa-banner/1003211_ncaa_300x250_v1_unminified/styles/style.css",
+		"/luke_projects_all/oliver/ncaa-banner/1003211_ncaa_300x250_v1_unminified/js/banner.loader.js",
+		"/luke_projects_all/oliver/ncaa-banner/1003211_ncaa_300x250_v1_unminified/js/banner.animation.js",
+		"/luke_projects_all/oliver/ncaa-banner/1003211_ncaa_300x250_v1_unminified/js/banner.js",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/css/styles.css",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/css/nav.css",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_4/300x250/index.html",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_4/300x250/main.js",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_3/300x600/main.js",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_3/160x600/main.js",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_3/300x250/index.html",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_3/300x250/main.js",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_2/728x90/index.html",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_2/320x50/index.html",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_2/300x600/index.html",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_2/300x50/index.html",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_2/300x250/index.html",
+		"/luke_projects_all/united-airlines/dev/united_clone/policy_2/160x600/index.html",
+		"/luke_projects_all/craft-mcCann/gitrepo/L-Oreal-TPSR-Standard-Banners-DG06988_NYC-CWW/standard/300x600/src/js/craft.js",
+		"/luke_projects_all/craft-mcCann/gitrepo/L-Oreal-TPSR-Standard-Banners-DG06988_NYC-CWW/standard/300x600/dist/index.html",
+		"/luke_projects_all/rebellion-design/dell/dev/v11lukeFrontPage6Bars/css/main.css",
+		"/luke_projects_all/rebellion-design/dell/dev/v11lukeFrontPage6Bars/js/dell-tech.js",
+		"/luke_projects_all/rebellion-design/dell/dev/v11lukeFrontPage6Bars/css/podcastlatest.css",
+		"/luke_projects_all/rebellion-design/dell/dev/v11lukeFrontPage6Bars/home.htm",
+		"/luke_projects_all/rebellion-design/dell/dev/v11lukeFrontPage copy 7/home.htm",
+		"/luke_projects_all/rebellion-design/dell/dev/v11_luke/home.html",
+		"/luke_projects_all/rebellion-design/dell/dev/v11_luke/css/main.css",
+		"/luke_projects_all/rebellion-design/dell/dev/v11_luke copy 4/home.html",
+		"/luke_projects_all/rebellion-design/dell/dev/v11_luke/css/xxpodcast.css",
+		"/luke_projects_all/rebellion-design/dell/dev/v11_luke/css/podcast.css",
+		"/luke_projects_all/rebellion-design/dell/dev/v11_luke/js/dell-tech.js",
+		"/luke_projects_all/quickstart/app/mock-heroes.ts",
+		"/luke_projects_all/quickstart/app/hero.ts",
+		"/luke_projects_all/quickstart/app/hero-detail.component.ts",
+		"/luke_projects_all/quickstart/app/app.module.ts",
+		"/luke_projects_all/quickstart/app/hero-detail.component.ts.js",
+		"/luke_projects_all/angular-tour-of-heroes/app/app.module.js",
+		"/luke_projects_all/angular-tour-of-heroes/app/dashboard.component.css",
+		"/luke_projects_all/angular-tour-of-heroes/app/heroes.component.ts",
+		"/luke_projects_all/angular-tour-of-heroes/app/hero.ts",
+		"/luke_projects_all/angular-tour-of-heroes/app/hero.service.ts",
+		"/luke_projects_all/angular-tour-of-heroes/app/mock-heroes.ts",
+		"/luke_projects_all/angular-tour-of-heroes/app/special-super-hero.service.ts",
+		"/luke_projects_all/angular-tour-of-heroes/app/heros.component.ts",
+		"/luke_projects_all/angular-tour-of-heroes/node_modules/typescript/lib/typescript.js",
+		"/luke_projects_all/angular-tour-of-heroes/app/app.component.ts",
+		"/luke_projects_all/angular-tour-of-heroes/index.html",
+		"/luke_projects_all/angular-tour-of-heroes/app/app.component.js",
+		"/luke_projects_all/angular-quickstart/package-json",
+		"/luke_projects_all/craft-mcCann/gitrepo/CFA_holiday_DG05782/holiday/300x250/src/js/index.js",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTHoliday16Win10_DG05346/Yasmin/Yasmin_Versatility_Generic/160x600_Generic/sass/styles.scss",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTHoliday16Win10_DG05346/Yasmin/Yasmin_Versatility_NoOffer/970x250_NoOffer/src/js/index.js",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTHoliday16Win10_DG05346/Yasmin/Yasmin_Versatility_NoOffer/970x250_NoOffer/sass/styles.scss",
+		"/luke_projects_all/banner_generic/Quads_Versatility_299_Offer/300x250_noGulp/src/index.html",
+		"/luke_projects_all/banner_generic/Quads_Versatility_299_Offer/300x250_noGulp/src/styles.css",
+		"/luke_projects_all/banner_generic/Quads_Versatility_299_Offer/300x250_noGulp/src/index.js",
+		"/luke_projects_all/banner_generic/Quads_Versatility_299_Offer/300x250_noGulp/src/css/styles.css",
+		"/luke_projects_all/splash/wovenshirts/izod/kohls/200x200/index.html",
+		"/luke_projects_all/splash/holidaysweaters/izod/jcpenny/728x90/index.html",
+		"/luke_projects_all/splash/holidaysweaters/izod/jcpenny/300x250/index.html",
+		"/luke_projects_all/splash/holidaysweaters/izod/jcpenny/160x600/index.html",
+		"/luke_projects_all/splash/wovenshirts/izod/kohls/160x600/shirt8.png",
+		"/luke_projects_all/splash/holidaysweaters/izod/jcpenny/300x250/style.css",
+		"/luke_projects_all/splash/holidaysweaters/izod/jcpenny/728x90/index.js",
+		"/luke_projects_all/splash/holidaysweaters/izod/jcpenny/300x250/index.js",
+		"/luke_projects_all/splash/holidaysweaters/izod/jcpenny/120x600/styleX.css",
+		"/luke_projects_all/splash/holidaysweaters/izod/jcpenny/120x600/style.css",
+		"/luke_projects_all/splash/holidaysweaters/izod/jcpenny/120x600/index.js",
+		"/luke_projects_all/splash/holidaysweaters/izod/jcpenny/120x600/index.html",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTHoliday16Win10_DG05346/Quads/Quads_Versatility_299_Offer/970x90/src/index.html",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTHoliday16Win10_DG05346/Quads/Quads_Versatility_299_Offer/970x66/src/index.html",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTHoliday16Surface/Victoria/Screen_No-Offer/300x600/sass/styles.scss",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTOctRefresh/FY17/Real_People/US_10588974/Standard/Beowulf/Pen_HPSpectre_noOffer/160x600/sass/styles.scss",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTOctRefresh/FY17/Real_People/US_10588974/Standard/Beowulf/Versatility_noOffer/970x90/dist/index.html",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTOctRefresh/FY17/Real_People/US_10588974/Standard/Beowulf/Versatility_noOffer/728x90/src/index.html",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTOctRefresh/FY17/Real_People/US_10588974/Standard/Beowulf/Versatility_noOffer/970x90/src/index.html",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTOctRefresh/FY17/Real_People/US_10588974/Standard/Beowulf/Versatility_noOffer/160x600/src/js/index.js",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTOctRefresh/FY17/Real_People/US_10588974/Standard/Beowulf/Versatility_noOffer/160x600/src/index.html",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTH1CompeteSurface_Versatility/Standard/H1_SP4_Compete_Versatility_300x250_150off/sass/styles.scss",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTH1CompeteW10/Rich/H1_Win10_Compete360_noOffer_RM_970x250/src/richLoads/richload/css/styles.css",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTH1CompeteW10/Standard/H1_Compete_Dell_Screen/H1_Compete_Dell_Screen_300x250_noOffer/src/js/index.js",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTH1CompeteW10/Standard/H1_Compete_Dell_Screen/H1_Compete_Dell_Screen_300x250_noOffer/tests/test.js",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTH12017-repo3/MSFTH12017/Microsoft-banners-html5-realpeople/FY17/Real_People/US_10588974/Standard/Jorge_Sandra/power_300offer/728x90/sass/styles.scss",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTH12017/Microsoft-banners-html5-realpeople/FY17/Real_People/US_10588974/Standard/Jorge_Sandra/pen/728x90/sass/styles.scss",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTH12017/Microsoft-banners-html5-realpeople/FY17/Real_People/US_10588974/Standard/Jorge_Sandra/pen/728x90/src/index.html",
+		"/luke_projects_all/craft-mcCann/gitrepo/MSFTH12017/Microsoft-banners-html5-realpeople/FY17/Real_People/US_10588974/Standard/Jorge_Sandra/pen/728x90/src/css/styles.css",
+		"/luke_projects_all/ketchum/coffeemate-banner640x480/src/js/index.js",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/aboutcont.html",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/japscreens.html",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/README.md",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/designextrasxxx.html",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/designextras.html",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/3DViews.html",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/exhibgraphics.html",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/pubhousmus.html",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/thesixties.html",
+		"/luke_projects_all/markus-dohner-site/mdohner-site-repo/mdohner-site/OInubia.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+			"/luke_projects_all/wilmette/mymap",
+			"/luke_projects_all/angular-js/angular-phonecat/app",
+			"/luke_projects_all/wilmette/mymap",
+			"/luke_projects_all/msk-test/download_e90feqolq7_180eij5sr_3901503",
+			"/luke_projects_all/msk-test/download_e90feqolq7_180eij5sr_3901503/js",
+			"/luke_projects_all/Luke-site-calypsoBootstrap/calypso/bootstrap-ld,/luke_projects_all/msk-test/download_e90feqolq7_180eij5sr_3901503/jsclick",
+			"/luke_projects_all/Luke-site-calypsoBootstrap/calypso/bootstrap-ld",
+			""
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+			"append",
+			"node.append",
+			"circle",
+			"node",
+			"nodeAsThis",
+			"Alice",
+			"root",
+			"_children",
+			"treedata",
+			"path",
+			"node.append(\"path\")",
+			"end",
+			".attr(\"transform\"",
+			".attr(\"transform\", function(d) {",
+			".attr(\"transform\", function(d)",
+			".attr(\"transform\", function(d) {",
+			"treeData",
+			"valueline",
+			"csv",
+			"value vs",
+			"value",
+			"axis",
+			"// define the line",
+			"path",
+			"area",
+			"valueline",
+			"scaleTime",
+			"\");\n",
+			"y:0",
+			"greenland1",
+			"timeline",
+			"wsite-header-section",
+			"Aller",
+			"close",
+			"content",
+			"622px",
+			"622",
+			"DomEvent",
+			"dell-streak-7",
+			"phones.json",
+			"geojson",
+			"geo",
+			"layer",
+			"indianhill",
+			"Come to Indian Hill Golf Course",
+			"leaflet-interactive",
+			"#",
+			"leaflet",
+			"leaflet.css",
+			"leaflet",
+			"leaftet",
+			"clientlib",
+			"veiw",
+			"view",
+			"render",
+			".completedChecked",
+			"completedChecked",
+			"itemCompleted",
+			"itemRemove",
+			".destroy",
+			".completed",
+			"$live",
+			"removeItem",
+			"itemRemove",
+			"destroy",
+			"distroy",
+			".completed",
+			"completed",
+			"block",
+			"completed",
+			"qs",
+			"todo-count",
+			"todoapp",
+			"click",
+			"newTodo",
+			"Luke_Dohner.doc",
+			"lukedohner.doc",
+			"(?:\\d*\\.)?\\d+",
+			"\\btest(er|ing|ed|s)?\\b",
+			"\\b\\w{4}\\b",
+			"(?:\\d*\\.)?\\d+",
+			"^[ \\t]+|[ \\t]+$",
+			"a.",
+			"_filter",
+			"activeTodos",
+			"setView",
+			"update",
+			"ID",
+			"newTodo",
+			"title",
+			"complete",
+			"not active",
+			"active",
+			"setItem",
+			"updateData",
+			"setItem",
+			"todos",
+			"editItemSave",
+			"itemRemove",
+			"destroy",
+			"qs",
+			"bind",
+			"$live",
+			"bind",
+			"itemRemove",
+			"destroy",
+			"distroy",
+			"itemRemove",
+			"destroy",
+			"retina",
+			"/ 2",
+			"retina",
+			"itemRemove",
+			"destroy",
+			"completed",
+			"book_at",
+			"dollars",
+			"count",
+			"shimmer",
+			"VGID_1",
+			"duration",
+			"798",
+			"match-height",
+			"latest-podcast-copy-inner",
+			"latest-podcast-copy",
+			"listen-now-sm",
+			"listen-now-sm:before",
+			"#section-latest-podcast h2"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"y:10",
+			"FUNCMAIN",
+			".",
+			".copy",
+			".",
+			".copy",
+			".",
+			".copy",
+			".",
+			".copy",
+			".",
+			".copy",
+			".",
+			"#header",
+			"header",
+			".header",
+			"\"header",
+			".copy",
+			".",
+			".copy",
+			".",
+			".copy",
+			".",
+			".copy",
+			".",
+			".copy",
+			".",
+			".copy",
+			".",
+			"#AWAHoliday",
+			"txt",
+			".",
+			"hidden",
+			"1ls",
+			"ls",
+			"LS",
+			"tlland",
+			"tl-land",
+			"tl2",
+			"#96C031",
+			"Copyright 2015 Luke Dohner"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": false,
+		"whole_word": false,
+		"wrap": false
+	},
+	"groups":
+	[
+		{
+			"selected": 0,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"BracketHighlighterBusy": false,
+							"bh_regions":
+							[
+								"bh_regex",
+								"bh_regex_center",
+								"bh_regex_open",
+								"bh_regex_close",
+								"bh_double_quote",
+								"bh_double_quote_center",
+								"bh_double_quote_open",
+								"bh_double_quote_close",
+								"bh_square",
+								"bh_square_center",
+								"bh_square_open",
+								"bh_square_close",
+								"bh_angle",
+								"bh_angle_center",
+								"bh_angle_open",
+								"bh_angle_close",
+								"bh_curly",
+								"bh_curly_center",
+								"bh_curly_open",
+								"bh_curly_close",
+								"bh_c_define",
+								"bh_c_define_center",
+								"bh_c_define_open",
+								"bh_c_define_close",
+								"bh_default",
+								"bh_default_center",
+								"bh_default_open",
+								"bh_default_close",
+								"bh_unmatched",
+								"bh_unmatched_center",
+								"bh_unmatched_open",
+								"bh_unmatched_close",
+								"bh_round",
+								"bh_round_center",
+								"bh_round_open",
+								"bh_round_close",
+								"bh_tag",
+								"bh_tag_center",
+								"bh_tag_open",
+								"bh_tag_close",
+								"bh_single_quote",
+								"bh_single_quote_center",
+								"bh_single_quote_open",
+								"bh_single_quote_close"
+							],
+							"syntax": "Packages/Text/Plain text.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"type": "text"
+				}
+			]
+		},
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 34.0
+	},
+	"input":
+	{
+		"height": 33.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			],
+			[
+				1,
+				0,
+				2,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			0.546781949484,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 179.0
+	},
+	"replace":
+	{
+		"height": 64.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+			[
+				"typescript",
+				"node_modules/typescript/lib/typescript.js"
+			],
+			[
+				"",
+				"css/bootstrap.css"
+			],
+			[
+				"kd",
+				"/luke_projects_all/accenture/imgtest/deviceY.png"
+			]
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"show_minimap": true,
+	"show_open_files": true,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 248.0,
+	"status_bar_visible": true
+}
