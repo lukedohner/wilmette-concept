@@ -1,7 +1,10 @@
 window.onload = function() {
 init();
+
 };
 function init(){
+    
+    initdata();
     var mapboxAccessToken = 'sk.eyJ1IjoibHVrZWRvaG5lciIsImEiOiJjajRnMnFtNHQwMTQzMzJwaTE4b2pxbzlsIn0.FhKUrokvRUth-xBZUtMcrw';
     var mapboxUrl ="https://api.tiles.mapbox.com/v4/{id}/{z}/{x}/{y}.png?access_token={accessToken}";
     var mapboxAttribution = 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery © <a href="http://mapbox.com">Mapbox</a>';
@@ -266,7 +269,7 @@ setTimeout(function(){
     //////modal over lay//////////
     watersmeetWin.on('click',function(){
     var win =  L.control.window(map,{title:'Watersmeet Woods',width:"100%", maxWidth:"400px",modal: true, position:'topLeft'})
-    .content("Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<img src='img/watersmeet.jpg' alt='westmore country club' width='100%'/><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href='http://www.wilmettehistory.org/' target='_blank'>wilmettehistory</a> West Wilmette" )
+    .content(vs.copy1 + "Lorem ipsum dolor sit amet,consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit.<img src='img/watersmeet.jpg' alt='westmore country club' width='100%'/><br>Lorem ipsum dolor sit amet, consectetur adipiscing elit.<a href='http://www.wilmettehistory.org/' target='_blank'>wilmettehistory</a> West Wilmette" )
     .prompt({callback:function(){console.log('This is called after OK click!');}
     })
     .show();
@@ -300,8 +303,9 @@ function onMapClick(e) {
     .setLatLng(e.latlng)
     .setContent("Map " + e.latlng.toString())
     .openOn(map);
+    console.log( " title0 From leaf.js============= " + vs.copy1);
     }
-    map.on('click', onMapClick);
+  map.on('click', onMapClick);
 
 
 function onEachFeature(feature, layer) {

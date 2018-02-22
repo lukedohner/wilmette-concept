@@ -1,0 +1,21 @@
+{
+    "title": "Weathertop",
+    "link": "http://en.wikipedia.org/wiki/Weathertop",
+    "latitude": 51.505,
+    "longitude": -0.09,
+    "imageUrl": "assets/img/location-images/Weathertop.jpg"
+  },
+{
+  "title": "Rivendell",
+  "link": "http://lotr.wikia.com/wiki/Rivendell",
+  "latitude": -0.09,
+  "longitude": 51.505,
+  "imageUrl": "assets/img/location-images/Rivendell2.jpg"
+},
+{
+  "title": "Minas Tirith",
+  "link": "http://lotr.wikia.com/wiki/Minas_Tirith",
+  "latitude": 38.78,
+  "longitude": -77.18,
+  "imageUrl": "assets/img/location-images/320px-Minas_Tirith.jpg"
+}
