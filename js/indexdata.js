@@ -4,7 +4,7 @@ function initdata() {
     }
 
 getthejason = function(){
-var dataurl = 'data/sheet.json';
+var dataurl = 'json/sheet.json';
 var xhr = new XMLHttpRequest();
 xhr.open('GET', dataurl, true);
 xhr.responseType = 'text';
